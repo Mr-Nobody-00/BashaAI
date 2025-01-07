@@ -13,7 +13,6 @@ import numpy as np
 
 
 chatStr = ""
-# https://youtu.be/Z3ZAJoi4x6Q
 def chat(query):
     global chatStr
     print(chatStr)
@@ -28,7 +27,6 @@ def chat(query):
         frequency_penalty=0,
         presence_penalty=0
     )
-    # todo: Wrap this inside of a  try catch block
     say(response["choices"][0]["text"])
     chatStr += f"{response['choices'][0]['text']}\n"
     return response["choices"][0]["text"]
@@ -47,7 +45,6 @@ def ai(prompt):
         frequency_penalty=0,
         presence_penalty=0
     )
-    # print(response["choices"][0]["text"])
     text += response["choices"][0]["text"]
     if not os.path.exists("Openai"):
         os.mkdir("Openai")
@@ -91,7 +88,7 @@ if __name__ =='__main__':
             os.system("start C:/Users/harim/AppData/Local/Microsoft/WindowsApps/Spotify.exe")
 
         elif "Using artificial intelligence".lower() in query.lower():
-            ai(prompt=query)
+            ai(prompt=query) # This Function is only for Open AI
 
         elif "Jarvis Quit".lower() in query.lower():
             exit()
