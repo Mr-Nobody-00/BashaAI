@@ -2,7 +2,6 @@ import speech_recognition as sr
 import os
 import webbrowser
 import datetime
-
 import win32com.client 
 speaker = win32com.client.Dispatch("SAPI.SpVoice")  # Only For Windows User
 import openai
@@ -17,7 +16,7 @@ def chat(query):
     global chatStr
     print(chatStr)
     openai.api_key = apikey
-    chatStr += f"Harry: {query}\n Jarvis: "
+    chatStr += f"Harry: {query}\n Basha: "
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt= chatStr,
